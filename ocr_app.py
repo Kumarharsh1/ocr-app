@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import re
-from paddleocr import PaddleOCR
+import easyocr
 from PIL import Image, ImageOps
 import spacy
 import tempfile
@@ -142,7 +142,7 @@ with st.sidebar:
 # ----------------------------------------------------------------------
 @st.cache_resource(show_spinner="Loading OCR engine...")
 def load_ocr():
-    return PaddleOCR(lang='en')
+    return easyocr.Reader(['en'])
 
 @st.cache_resource(show_spinner="Loading NLP model...")
 def load_nlp():
@@ -207,9 +207,9 @@ if uploaded_files:
                     st.image(image, caption=uploaded_file.name, use_container_width=True)
 
                 with st.spinner("Extracting text..."):
-                    result = ocr.ocr(tmp_path)
-                if result and result[0]:
-                    text = "\n".join([line[1][0] for line in result[0]])
+                    result = ocr.readtext(tmp_path)
+                if result:
+                    text = "\n".join([entry[1] for entry in result])
                 else:
                     text = "No text detected"
             else:
