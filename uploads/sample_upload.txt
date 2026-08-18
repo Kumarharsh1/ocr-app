@@ -1,0 +1,9 @@
+Patient Name: John Smith
+Age: 42
+Doctor: Dr. Lee
+Hospital: City Clinic
+Date: 2025-08-18
+Medicines: Amoxicillin
+Dosage: 500mg
+Frequency: Twice Daily
+
