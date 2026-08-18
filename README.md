@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Tesseract OCR
 
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/tesseract-ocr/badge.svg)](https://scan.coverity.com/projects/tesseract-ocr)
@@ -130,3 +131,7 @@ It is suggested to use leptonica with built-in support for [zlib](https://zlib.n
 For the latest online version of the README.md see:
 
 <https://github.com/tesseract-ocr/tesseract/blob/main/README.md>
+=======
+# ocr-app
+OCR Application using Tesseract OCR engine.
+>>>>>>> 099d363053bcdfeb04ca632803930aab7377c10d
